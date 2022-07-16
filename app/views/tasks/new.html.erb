@@ -1,0 +1,20 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.label :completed %>
+  <%= f.text_field :completed %>
+  <%= f.submit %>
+<% end %>
+
+<form class="new_task" id="new_task" action="/tasks" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token">
+  <label for="task_name">Title</label>
+  <input type="text" name="task[title]" id="task_name">
+  <label for="task_address">Details</label>
+  <input type="text" name="task[details]" id="task_details">
+  <label for="task_completed">Completed ?</label>
+  <input type="number" name="task[completed]" id="task_completed">
+  <input type="checkbox" name="commit" value="Create Task" data-disable-with="Create Task">
+</form>
